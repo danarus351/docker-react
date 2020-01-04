@@ -1,5 +1,5 @@
 sudo: required
-language: genric
+
 services:
     - docker
 before install:
