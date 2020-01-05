@@ -6,10 +6,12 @@ before install:
     - docker build -t danarus/docker-react -f Dockerfile.dev .
 script:
     - docker run -e CI=true danarus/docker-react npm run test
-#deploy:
-#how to ci to google cloud 
-
-
-
-#on:
-   # branch: master 
+deploy:
+    provider: 
+    region:
+    app:
+    env:
+    bucket_name:
+    bucket_path:
+    on:
+        branch: master 
