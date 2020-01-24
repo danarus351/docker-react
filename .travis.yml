@@ -7,11 +7,11 @@ before install:
 script:
     - docker run -e CI=true danarus/docker-react npm run test
 deploy:
-    provider: 
-    region:
-    app:
+    provider:
+    region: us=central-1
+    app: frontendapp
     env:
-    bucket_name:
+    bucket_name: 
     bucket_path:
     on:
         branch: master 
