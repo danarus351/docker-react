@@ -14,7 +14,7 @@ deploy:
     bucket_name: elasticbeanstalk-us-east-2-136102615569
     bucket_path: /docker-reacte
     on:
-         branch: master
+     branch: master
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     secure: $AWS_SECRET_KEY
