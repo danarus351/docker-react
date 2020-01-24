@@ -5,13 +5,17 @@ services:
 before install:
     - docker build -t danarus/docker-react -f Dockerfile.dev .
 script:
-    - docker run -e CI=true danarus/docker-react npm run test
+    - docker run -e CI=true danarus/docker-react npm run test 
 deploy:
-    provider:
-    region: us=central-1
-    app: frontendapp
-    env:
-    bucket_name: 
-    bucket_path:
+    edge: true
+    provider: elasticbeanstalk
+    region: us-east-2
+    app: docker-reacte
+    env: DockerReacte-env
+    bucket_name: elasticbeanstalk-us-east-2-136102615569
+    bucket_path: docker-reacte
     on:
-        branch: master 
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+        secure: $AWS_SECRET_KEY
